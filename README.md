@@ -1,6 +1,9 @@
 # licensemanager
 A C# library for interacting with the rest API of https://licensemanager.at/
 
+## early stages
+Thos project is in verry early stages. Expect breaking changes due to architectural changes.
+
 ## Implemented features (none yet)
 
 - [ ] List licenses
@@ -24,3 +27,6 @@ A C# library for interacting with the rest API of https://licensemanager.at/
 - [ ] Download Products (Pro)
 - [ ] Retrieve an application (pro)
 - [ ] Download Application (Pro)
+
+## Thanks to 
+https://github.com/stigzler/stigzler.support.wcLicenseManagerNet for some inspiration on the layout. I started this project because the previously mentioned project it is not compactible with blazor WASM since it uses WebClient
