@@ -1,8 +1,8 @@
-# licensemanager
+# Licensemanager
 A C# library for interacting with the rest API of https://licensemanager.at/
 
-## early stages
-Thos project is in verry early stages. Expect breaking changes due to architectural changes.
+## Early stages
+This project is in verry early stages. Expect breaking changes due to architectural changes.
 
 ## Implemented features (none yet)
 
