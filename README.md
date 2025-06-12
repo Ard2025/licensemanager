@@ -1,7 +1,7 @@
 # licensemanager
 A C# library for interacting with the rest API of https://licensemanager.at/
 
-## Implemented features
+## Implemented features (none yet)
 
 - [ ] List licenses
 - [ ] Retrieve a license
