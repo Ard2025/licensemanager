@@ -13,10 +13,19 @@ public class Tests
     }
 
     [Test]
-    public async Task Test1()
+    public async Task TestPredefinedKey()
     {
-        var manager = new LicenseManager("http://localhost:80", TestConsumerKey, TestConsumerSecret, TestLicenseKey, true);
-        var isValid = await manager.IsValid();
+        var manager = new LicenseManager("http://localhost:80", TestConsumerKey, TestConsumerSecret, TestLicenseKey);
+        var isValid = manager.IsValid();
+        Assert.That(isValid, Is.EqualTo(true));
+    }
+    
+    [Test]
+    public async Task TestLaterDefinedKey()
+    {
+        var manager = new LicenseManager("http://localhost:80", TestConsumerKey, TestConsumerSecret, String.Empty);
+        await manager.setLicenseKey(TestLicenseKey);
+        var isValid = manager.IsValid();
         Assert.That(isValid, Is.EqualTo(true));
     }
 }

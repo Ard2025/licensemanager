@@ -10,21 +10,36 @@ public class LicenseManager
     private string ConsumerKey;
     private string ConsumerSecret;
     private string LicenseKey;
-    private bool? LicenseIsValid;
-    private bool UseLicenseCashing;
+    private bool LicenseIsValid;
     
-    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret, string licenseKey, bool useLicenseCashing)
+    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret, string licenseKey)
     {
         BaseUrl = baseUrl;
         ConsumerKey = consumerKey;
         ConsumerSecret = consumerSecret;
         LicenseKey = licenseKey;
-        UseLicenseCashing = useLicenseCashing;
-    }
 
-    public void setLicenseKey(string licenseKey)
+        if (string.IsNullOrEmpty(licenseKey))
+        {
+            return;
+        }
+        var task = setLicenseKey(licenseKey);
+        while (!task.IsCompleted);
+    }
+    
+    public async Task<bool> setLicenseKey(string licenseKey)
     {
-        ConsumerKey = licenseKey;
+        LicenseKey = licenseKey;
+        
+        var licenseResponse = await GetLicense();
+        if (licenseResponse.data.expiresAt == null)
+        {
+            LicenseIsValid = true;
+            return true;
+        }
+        
+        LicenseIsValid = licenseResponse.data.expiresAt > DateTime.UtcNow;
+        return LicenseIsValid;
     }
 
     private async Task<string> CallApi(string route)
@@ -42,34 +57,5 @@ public class LicenseManager
         });
     }
 
-    public async Task<bool> IsValid()
-    {
-        if (UseLicenseCashing && LicenseIsValid != null)
-        {
-            return LicenseIsValid.Value;
-        }
-        
-        var licenseResponse = await GetLicense();
-        if (licenseResponse.data.expiresAt == null)
-        {
-            LicenseIsValid = true;
-            return true;
-        }
-
-        LicenseIsValid = licenseResponse.data.expiresAt > DateTime.UtcNow;
-        return LicenseIsValid.Value;
-    }
-
-    public async Task<bool> RefreshLicense()
-    {
-        var licenseResponse = await GetLicense();
-        if (licenseResponse.data.expiresAt == null)
-        {
-            LicenseIsValid = true;
-            return true;
-        }
-        
-        LicenseIsValid = licenseResponse.data.expiresAt > DateTime.UtcNow;
-        return LicenseIsValid.Value;
-    }
+    public bool IsValid() => LicenseIsValid;
 }
