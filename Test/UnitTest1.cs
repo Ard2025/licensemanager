@@ -15,8 +15,8 @@ public class Tests
     [Test]
     public async Task Test1()
     {
-        var manager = new LicenseManager("http://localhost:80", TestConsumerKey, TestConsumerSecret, TestLicenseKey);
-        var isValid = await manager.LicenseIsValid();
+        var manager = new LicenseManager("http://localhost:80", TestConsumerKey, TestConsumerSecret, TestLicenseKey, true);
+        var isValid = await manager.IsValid();
         Assert.That(isValid, Is.EqualTo(true));
     }
 }
