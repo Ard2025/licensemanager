@@ -23,11 +23,11 @@ public class LicenseManager
         {
             return;
         }
-        var task = setLicenseKey(licenseKey);
+        var task = SetLicenseKey(licenseKey);
         while (!task.IsCompleted);
     }
     
-    public async Task<bool> setLicenseKey(string licenseKey)
+    public async Task<bool> SetLicenseKey(string licenseKey)
     {
         LicenseKey = licenseKey;
         
