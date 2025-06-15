@@ -10,13 +10,16 @@ public class LicenseManager
     private string ConsumerKey;
     private string ConsumerSecret;
     private string LicenseKey;
+    private bool? LicenseIsValid;
+    private bool UseLicenseCashing;
     
-    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret, string licenseKey)
+    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret, string licenseKey, bool useLicenseCashing)
     {
         BaseUrl = baseUrl;
         ConsumerKey = consumerKey;
         ConsumerSecret = consumerSecret;
         LicenseKey = licenseKey;
+        UseLicenseCashing = useLicenseCashing;
     }
 
     public void setLicenseKey(string licenseKey)
@@ -39,13 +42,34 @@ public class LicenseManager
         });
     }
 
-    public async Task<bool> LicenseIsValid()
+    public async Task<bool> IsValid()
+    {
+        if (UseLicenseCashing && LicenseIsValid != null)
+        {
+            return LicenseIsValid.Value;
+        }
+        
+        var licenseResponse = await GetLicense();
+        if (licenseResponse.data.expiresAt == null)
+        {
+            LicenseIsValid = true;
+            return true;
+        }
+
+        LicenseIsValid = licenseResponse.data.expiresAt > DateTime.UtcNow;
+        return LicenseIsValid.Value;
+    }
+
+    public async Task<bool> RefreshLicense()
     {
         var licenseResponse = await GetLicense();
         if (licenseResponse.data.expiresAt == null)
         {
+            LicenseIsValid = true;
             return true;
         }
-        return licenseResponse.data.expiresAt > DateTime.UtcNow;
+        
+        LicenseIsValid = licenseResponse.data.expiresAt > DateTime.UtcNow;
+        return LicenseIsValid.Value;
     }
 }
