@@ -9,22 +9,14 @@ public class LicenseManager
     private string BaseUrl;
     private string ConsumerKey;
     private string ConsumerSecret;
-    private string LicenseKey;
+    private string LicenseKey = string.Empty;
     private bool LicenseIsValid;
     
-    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret, string licenseKey)
+    public LicenseManager(string baseUrl, string consumerKey, string consumerSecret)
     {
         BaseUrl = baseUrl;
         ConsumerKey = consumerKey;
         ConsumerSecret = consumerSecret;
-        LicenseKey = licenseKey;
-
-        if (string.IsNullOrEmpty(licenseKey))
-        {
-            return;
-        }
-        var task = SetLicenseKey(licenseKey);
-        while (!task.IsCompleted);
     }
     
     public async Task<bool> SetLicenseKey(string licenseKey)
