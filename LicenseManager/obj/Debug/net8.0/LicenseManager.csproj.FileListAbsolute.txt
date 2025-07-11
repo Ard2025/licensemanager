@@ -1,0 +1,12 @@
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\bin\Debug\net8.0\LicenseManager.deps.json
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\bin\Debug\net8.0\LicenseManager.dll
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\bin\Debug\net8.0\LicenseManager.pdb
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.AssemblyInfoInputs.cache
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.AssemblyInfo.cs
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.csproj.CoreCompileInputs.cache
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.sourcelink.json
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.dll
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\refint\LicenseManager.dll
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\LicenseManager.pdb
+C:\Users\ardva\source\repos\Ard2025\licensemanager\LicenseManager\obj\Debug\net8.0\ref\LicenseManager.dll

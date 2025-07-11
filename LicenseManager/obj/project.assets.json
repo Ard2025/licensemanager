@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ardva\\.nuget\\packages\\": {}
+    "C:\\Users\\ardva\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ardva\\RiderProjects\\licensemanager\\LicenseManager\\LicenseManager.csproj",
+      "projectUniqueName": "C:\\Users\\ardva\\source\\repos\\Ard2025\\licensemanager\\LicenseManager\\LicenseManager.csproj",
       "projectName": "LicenseManager",
-      "projectPath": "C:\\Users\\ardva\\RiderProjects\\licensemanager\\LicenseManager\\LicenseManager.csproj",
+      "projectPath": "C:\\Users\\ardva\\source\\repos\\Ard2025\\licensemanager\\LicenseManager\\LicenseManager.csproj",
       "packagesPath": "C:\\Users\\ardva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ardva\\RiderProjects\\licensemanager\\LicenseManager\\obj\\",
+      "outputPath": "C:\\Users\\ardva\\source\\repos\\Ard2025\\licensemanager\\LicenseManager\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ardva\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ardva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -60,26 +67,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
